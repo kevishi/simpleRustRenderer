@@ -20,12 +20,25 @@ fn main() {
         usage("simpleCudaRenderer");
     }
 
-    let ren = renderer::Renderer {};
+    
 
-    let numCircles: &mut i32;
-    let position: &mut Vec<f32>;
-    let velocity: &mut Vec<f32>;
-    let color: &mut Vec<f32>;
-    let radius: &mut Vec<f32>;
-    ren.loadScene(&scene, numCircles, position, velocity, color, radius);
+    let mut numCircles = 0;
+    let mut position: Vec<f32> = Vec::new();
+    let mut velocity: Vec<f32> = Vec::new();
+    let mut color: Vec<f32> = Vec::new();
+    let mut radius: Vec<f32> = Vec::new();
+    let mut ren = renderer::Renderer {
+        numCircles: numCircles,
+        position: position,
+        velocity: velocity,
+        color: color,
+        radius: radius
+    };
+    
+
+    ren.loadScene(&scene);
+
+    for circle in ren.position {
+        println!("{}", circle);
+    }
 }
