@@ -37,8 +37,4 @@ fn main() {
     
 
     ren.loadScene(&scene);
-
-    for circle in ren.position {
-        println!("{}", circle);
-    }
 }
